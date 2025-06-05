@@ -1,0 +1,79 @@
+/* # TRANSLUCENCY */
+
+/* ## RESET */
+:root {
+	background-color: transparent !important;
+	--zen-main-browser-background: transparent !important;
+	--zen-themed-toolbar-bg-transparent: transparent !important;
+	--newtab-background-color: transparent !important;
+	--tabpanel-background-color: transparent !important;
+	--sidebar-background-color: transparent !important;
+	--toolbar-bgcolor: transparent !important;
+	--newtab-background-color-secondary: transparent;
+}
+
+#browser::after {
+	display: none !important;
+}
+
+:root {
+	--zen-main-browser-background: rgba(0,0,0,0.21) !important;
+	--toolbarbutton-border-radius: 0 !important;
+	--zen-border-radius: 0 !important;
+	--border-radius-medium: 0 !important;
+}
+
+#navigator-toolbox {
+	--tab-border-radius: 0 !important;
+	--border-radius-medium: 0 !important;
+}
+
+.tab-content[pinned], .tab-background {
+	--tab-block-margin: 0 !important;
+	--tab-inline-padding: 0 !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+
+#zen-essentials-container {
+	order: 6;
+	padding: 3px !important;
+	
+	& > tab {
+		
+		&::after {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			box-sizing: border-box;
+		}
+		
+		&:hover::after {
+			border: 2px solid #b4b4b5 !important;
+		}
+		
+	}
+}
+
+
+toolbar#nav-bar > #nav-bar-customization-target, toolbar#zen-sidebar-top-buttons {
+	height: 100%;
+	
+	& toolbarbutton {
+		--toolbarbutton-outer-padding: 11px !important;
+		--toolbarbutton-inner-padding: 10px !important;
+		height: 100% !important;
+		width: auto !important;
+		aspect-ratio: 1/1 !important;
+		padding: 0 !important;
+				
+		& > :is(.toolbarbutton-icon, .toolbarbutton-badge-stack) {
+			height: 100% !important;
+			width: auto !important;
+			aspect-ratio: 1/1 !important;
+		}
+		
+	}
+}
